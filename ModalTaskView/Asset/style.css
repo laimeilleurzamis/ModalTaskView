@@ -1,3 +1,0 @@
-#modal-box:has(#task-summary) #modal-close-button {
-    display: none !important;
-}
