@@ -1,3 +1,8 @@
 #modal-box:has(#task-summary) #modal-close-button {
     display: none !important;
 }
+
+.task-board .task-board-title a {
+    pointer-events: none;
+    text-decoration: none;
+}

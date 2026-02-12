@@ -1,5 +1,10 @@
 function onTaskClick(e) {
     console.log('Clicked element:', e.target);
+
+    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('[data-url]') || e.target.closest('.badge-item')) {
+        return;
+    }
+
     var taskElement = KB.dom(e.target).parent('.task-board');
         if (taskElement) {
             var taskUrl = KB.dom(taskElement).data('taskUrl');
