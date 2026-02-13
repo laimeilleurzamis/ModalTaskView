@@ -31,6 +31,9 @@ $isModal = $this->app->request->isAjax();
         margin: 0;
         padding: 0 !important;
     }
+    #my-panel-close {
+        cursor: pointer;
+    }
 </style>
 
 <?php if ($isModal): ?>

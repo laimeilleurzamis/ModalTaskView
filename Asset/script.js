@@ -35,9 +35,10 @@ function openTaskInModal(e) {
 
 KB.on('dom.ready', function () {
     KB.onClick('.task-board *', onTaskClick, true);
-    KB.onClick('#my-panel-close *', function (e) {
+    KB.onClick('#my-panel-close, #my-panel-close *', function (e) {
         e.preventDefault();
         KB.modal.close();
     });
+    KB
     openTaskInModal();
 });
