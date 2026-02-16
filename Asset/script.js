@@ -40,6 +40,5 @@ KB.on('dom.ready', function () {
         e.preventDefault();
         KB.modal.close();
     });
-    KB
     openTaskInModal();
 });
