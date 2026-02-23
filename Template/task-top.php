@@ -11,21 +11,25 @@ $isModal = $this->app->request->isAjax();
     }
     .btn-nav {
         display: flex;
-        background-color: var(--header-background-color);
+        background-color: #fff;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        border: 1px solid var(--color-lighter);
+        border: 1px solid #e2e8f0;
         height: 26px;
         aspect-ratio: 1 / 1;
-        border-radius: 30%;
+        border-radius: 6px;
         text-decoration: none;
+        padding: 0 !important;
+        transition: 0.2s;
     }
-    .btn-task-nav:hover {
-        background-color: var(--color-lighter);
+    .btn-nav:hover {
+        border: 1px solid var(--color-lighter);
+        background-color: var(--header-background-color);
     }
-    .btn-task-nav:active {
-        background-color: var(--color-light);
+    .btn-nav:active {
+        border: 1px solid #989ba1 !important;
+        background-color: var(--color-lighter) !important;
     }
     .icon-nav {
         margin: 0;
@@ -38,6 +42,9 @@ $isModal = $this->app->request->isAjax();
 
 <?php if ($isModal): ?>
     <div class="nav-elem-container">
+        <a href="<?= $this->url->href('TaskModificationController', 'edit', array('task_id' => $task['id'], 'project_id' => $task['project_id'])) ?>" class="btn-nav js-modal-medium">
+            <i class="fa fa-pencil-square-o tooltip icon-nav js-modal-medium" title="<?= t('Edit the task') ?>"></i>
+        </a>
         <a href="<?= $this->url->href('TaskViewController', 'show', array('task_id' => $task['id'], 'project_id' => $task['project_id'])) ?>" class="btn-nav">
             <i class="fa fa-expand tooltip icon-nav" title="<?= t('open in fullscreen tooltip') ?>"></i>
         </a>
@@ -47,6 +54,9 @@ $isModal = $this->app->request->isAjax();
     </div>
 <?php else: ?>
     <div class="nav-elem-container">
+        <a href="<?= $this->url->href('TaskModificationController', 'edit', array('task_id' => $task['id'], 'project_id' => $task['project_id'])) ?>" class="btn-nav js-modal-medium">
+            <i class="fa fa-pencil-square-o tooltip icon-nav js-modal-medium" title="<?= t('Edit the task') ?>"></i>
+        </a>
         <a href="<?= $this->url->href('BoardViewController', 'show', array('project_id' => $task['project_id'])) ?>&open_task_id=<?= $task['id'] ?>" class="btn-nav">
             <i class="fa fa-compress tooltip icon-nav" title="<?= t('open in window tooltip') ?>"></i>
         </a>
