@@ -10,6 +10,7 @@ function onTaskClick(e) {
             var taskUrl = KB.dom(taskElement).data('taskUrl');
 
             if (taskUrl) {
+                localStorage.setItem('gecos_last_task_url', taskUrl);
                 KB.modal.open(taskUrl, 'small', true);
             }
         }
