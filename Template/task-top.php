@@ -57,7 +57,7 @@ $isModal = $this->app->request->isAjax();
         <a href="<?= $this->url->href('TaskModificationController', 'edit', array('task_id' => $task['id'], 'project_id' => $task['project_id'])) ?>" class="btn-nav js-modal-medium">
             <i class="fa fa-pencil-square-o tooltip icon-nav js-modal-medium" title="<?= t('Edit the task') ?>"></i>
         </a>
-        <a href="<?= $this->url->href('BoardViewController', 'show', array('project_id' => $task['project_id'])) ?>&open_task_id=<?= $task['id'] ?>" class="btn-nav">
+        <a href="<?= $this->url->href('BoardViewController', 'show', array('project_id' => $task['project_id'], 'open_task_id' => $task['id'])) ?>" class="btn-nav">
             <i class="fa fa-compress tooltip icon-nav" title="<?= t('open in window tooltip') ?>"></i>
         </a>
         <a href="<?= $this->url->href('BoardViewController', 'show', array('project_id' => $task['project_id'])) ?>" class="btn-nav">
